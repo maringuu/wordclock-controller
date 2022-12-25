@@ -1,0 +1,19 @@
+# Idea
+A controller for [wordclock}(https://www.printables.com/de/model/331012-wordclock-16x16-led-matrix)
+cron executes a script (at night) that sets the text for the next day.
+
+## clockctl
+A shell script that is just a thin wrapper around the bad clock web api
+
+## update-clock-message.py
+### Option 1
+Uses CalDav to download multiple calendars.
+Each calendar is for one type of message.
+E.g. the calendar called "trash" is for the events for trash.
+Another calendar "birthday" would have brithdays in it.
+
+https://github.com/python-caldav/caldav
+
+### Option 2
+Downloads a single calendar via requests.
+The name of the inidvidual events determine what message to show.

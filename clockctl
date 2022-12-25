@@ -1,0 +1,36 @@
+#!/bin/sh
+set -e
+
+cmd=$1
+
+alarm=1
+birthday=2
+trash=3
+auto=4
+day=5
+formel1=6
+plastic_trash=7
+vacation=8
+
+play=10
+barber=11
+termin=12
+
+case $cmd in
+    "alarm" )
+        selected=$alarm
+        ;;
+    "birthday" )
+        selected=$birthday
+        ;;
+esac
+
+if [ -z "$selected" ]; then
+    printf "$cmd is not a valid command\n"
+fi
+
+
+
+reply=$(curl --no-progress-meter "http://wordclock:8080/ew$selected")
+
+printf "$reply\n"
